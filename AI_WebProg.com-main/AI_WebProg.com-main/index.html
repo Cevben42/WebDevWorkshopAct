@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hall of Questions</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <div class="title">Hall of Questions</div>
+        <div class="controls" id="controls">
+            <select id="size">
+                <option value="20">Small (20x20)</option>
+                <option value="30">Medium (30x30)</option>
+                <option value="50">Large (50x50)</option>
+            </select>
+
+            <select id="variation">
+                <option value="free">Free</option>
+                <option value="obstacle">Obstacle</option>
+                <option value="tight">Tight</option>
+            </select>
+
+            <select id="danger">
+                <option value="1">Light</option>
+                <option value="3">Medium</option>
+                <option value="5">Hard</option>
+            </select>
+
+            <button id="startBtn">Start</button>
+        </div>
+    </div>
+
+    <div class="body">
+        <div id="grid"></div>
+
+        <div id="victoryScreen" style="display: none; text-align: center; color: white; padding: 20px;">
+            <h1>CONGRATULATIONS!</h1>
+            <p>You survived all rounds.</p>
+            <img src="assets/squid-game-front-man.gif" alt="Victory" style="max-width: 100%; border-radius: 10px; border: 2px solid gold;">
+            <br>
+            <button onclick="location.reload()" style="margin-top: 20px; padding: 10px 20px; cursor: pointer;">Play Again</button>
+        </div>
+
+        <div class="instructions" id="instructions">
+            <p><span class="legend blue" style="background: blue; display: inline-block; width: 15px; height: 15px;"></span> Blue - Player</p>
+            <p><span class="legend red" style="background: red; display: inline-block; width: 15px; height: 15px;"></span> Red - Enemy</p>
+            <p><span class="legend yellow" style="background: yellow; display: inline-block; width: 15px; height: 15px;"></span> Yellow - Puzzle</p>
+
+            <div class="objective">
+                <p><strong>Round: <span id="roundVal">0</span> / 3</strong></p>
+                <p><strong>Health: <span id="healthVal">3</span></strong></p>
+                Solve all puzzles → Unlock the exit
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
